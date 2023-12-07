@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "rg-staticsite" {
+resource "azurerm_resource_group" "rg-staticsite2" {
   provider = azurerm.cloud
   name     = "storage-azure"
   location = "eastus"
@@ -7,8 +7,8 @@ resource "azurerm_resource_group" "rg-staticsite" {
 resource "azurerm_storage_account" "storage_account" {
   provider                 = azurerm.cloud
   name                     = var.storage_account_name
-  resource_group_name      = azurerm_resource_group.rg-staticsite.name
-  location                 = azurerm_resource_group.rg-staticsite.location
+  resource_group_name      = azurerm_resource_group.rg-staticsite2.name
+  location                 = azurerm_resource_group.rg-staticsite2.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   account_kind             = "StorageV2"
